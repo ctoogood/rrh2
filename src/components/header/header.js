@@ -60,7 +60,7 @@ const Header = () => {
             <li><Link to="/contact">Contact</Link></li>
         </ul>
             <div className="uk-navbar-right">
-          <Link to="/cart" className="uk-icon uk-navbar-item uk-text-primary" data-uk-icon="cart"/>
+          <Link to="/cart" className="uk-icon uk-navbar-item uk-text-primary" data-uk-icon="cart"></Link>
           </div>
           </div>
           
