@@ -1,7 +1,11 @@
-/**
- * Implement Gatsby's Browser APIs in this file.
- *
- * See: https://www.gatsbyjs.com/docs/browser-apis/
- */
+import './src/styles/main.scss'
 
-// You can delete this file if you're not using it
+import React from "react";
+import { ProductContextProvider } from "./src/context/ProductContext";
+import { CartContextProvider } from "./src/context/CartContext";
+
+export const wrapRootElement = ({ element }) => (
+  <ProductContextProvider>
+    <CartContextProvider>{element}</CartContextProvider>
+  </ProductContextProvider>
+);

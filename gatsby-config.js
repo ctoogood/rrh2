@@ -1,8 +1,30 @@
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+});
+
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `Rosy Rose Herbalist`,
+    siteUrl: `https://www.rosyherbalist.co.uk`,
+    description: `Herbalist based in Falkland, Fife`,
+    author: `Rosy Rose`,
+    image: `https://res.cloudinary.com/dhat0b0ey/image/upload/v1590518155/RRH/rosy-rose-herbalist.png`,
+    keywords: [
+      `Herbalist`,
+      `Falkland`,
+      `Fife`,
+      `Scotland`,
+      `Scottish Herbalist`,
+      `Herbal Remedies`,
+      `Herbal Products`,
+      `Herbal Tea`,
+      `Herbal Healing`,
+      `Herbal Balm`,
+      `Herbal Syrup`,
+      `Herbal Medicine`,
+      `Herbal Healthcare`,
+      `Healthcare`,
+    ],
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -13,8 +35,16 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `${__dirname}/src/images`,
+      },
+    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    `gatsby-plugin-sass`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -24,9 +54,29 @@ module.exports = {
         background_color: `#663399`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
+    {
+      resolve: "gatsby-source-sanity",
+      options: {
+        projectId: "mk4ip66s",
+        dataset: "production",
+      },
+    },
+    {
+      resolve: `gatsby-source-instagram`,
+      options: {
+        username: `11452324078`,
+      },
+    },
+    {
+      resolve: "gatsby-source-shopify",
+      options: {
+        shopName: process.env.GATSBY_SHOP_NAME,
+        accessToken: process.env.GATSBY_ACCESS_TOKEN,
+        apiVersion: "2020-07",
+      },
+    }
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
