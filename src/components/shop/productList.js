@@ -1,8 +1,7 @@
 import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
 import Product from "./product"
 
-const ProductList = ({products}) => {
+const ProductList = ({ products }) => {
   return (
     <section className="rrh_grid">
       {products.map(product => (
