@@ -35,16 +35,6 @@ function SEO({ description, lang, meta, title }) {
       }}
       title={title}
       titleTemplate={defaultTitle ? `%s | ${defaultTitle}` : null}
-      script={[
-        {
-          src:
-            "https://cdnjs.cloudflare.com/ajax/libs/uikit/3.2.0/js/uikit.min.js",
-        },
-        {
-          src:
-            "https://cdn.jsdelivr.net/npm/uikit@3.2.3/dist/js/uikit-icons.min.js",
-        },
-      ]}
       meta={[
         {
           name: `description`,
