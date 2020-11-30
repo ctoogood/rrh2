@@ -120,24 +120,37 @@
 import React from "react"
 import { Link } from "gatsby"
 
+import Cart from "../../images/cart.svg"
+import Menu from "../../images/menu.svg"
+
 const Header = () => {
+  const menuItems = [
+    { title: "Herbal Medicine", link: "/herbalmedicine" },
+    { title: "Workshops", link: "/workshops" },
+    { title: "Consultations", link: "/consultations" },
+    { title: "Shop", link: "/shop" },
+    { title: "Blog", link: "/blog" },
+    { title: "Contact", link: "/contact" },
+  ]
   return (
     <div
-      data-uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky"
-      style={{ backgroundColor: "white" }}
+    // data-uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky"
     >
       <nav
         className="uk-navbar-container uk-background-primary uk-padding-top uk-hidden@m"
         style={{ backgroundColor: "white" }}
         data-uk-navbar
       >
-        <div className="uk-navbar-left">
+        <div className="uk-navbar-left" style={{ backgroundColor: "white" }}>
           <button
+            style={{ backgroundColor: "white" }}
             aria-label="Menu Button"
             className="uk-navbar-toggle uk-button"
-            data-uk-navbar-toggle-icon
             data-uk-toggle="target: #mobile-menu"
-          />
+          >
+            {" "}
+            <img src={Menu} alt="" width="20px" />
+          </button>
         </div>
         <div className="uk-navbar-center">
           <Link className="uk-navbar-item uk-logo" to="/">
@@ -152,18 +165,20 @@ const Header = () => {
         <div className="uk-navbar-right">
           <Link
             to="/cart"
-            className="uk-icon uk-navbar-item"
-            data-uk-icon="cart"
-          ></Link>
+            className=" uk-navbar-item"
+            // data-uk-icon="cart"
+          >
+            <img src={Cart} alt="" width="20px" />
+          </Link>
         </div>
       </nav>
       <nav
         className="uk-navbar-container uk-background-primary uk-padding-top uk-visible@m uk-margin-auto"
         style={{
-          backgroundColor: "white",
           height: "5rem",
           margin: "auto",
           maxWidth: "1000px",
+          backgroundColor: "white",
         }}
         data-uk-navbar
       >
@@ -212,11 +227,10 @@ const Header = () => {
         </div>
         <div className="uk-navbar-right">
           <div>
-            <Link
-              to="/cart"
-              className="uk-icon uk-navbar-item uk-text-primary"
-              data-uk-icon="cart"
-            ></Link>
+            <Link to="/cart" className="uk-navbar-item">
+              {" "}
+              <img src={Cart} alt="" width="20px" />
+            </Link>
           </div>
         </div>
       </nav>
@@ -231,21 +245,13 @@ const Header = () => {
           />
 
           <ul className="uk-nav uk-offcanvas-nav ">
-            <li>
-              <a href="/" style={{ color: "black" }}>
-                Home
-              </a>
-            </li>
-            <li>
-              <a href="/about" style={{ color: "black" }}>
-                About
-              </a>
-            </li>
-            <li>
-              <a href="/shop" style={{ color: "black" }}>
-                Shop
-              </a>
-            </li>
+            {menuItems.map(item => (
+              <li key={item.title}>
+                <Link className="" to={item.link} style={{ color: "black" }}>
+                  {item.title}
+                </Link>
+              </li>
+            ))}
           </ul>
         </div>
       </div>
