@@ -23,7 +23,7 @@ const BasicProductImageGallery = ({ selectedVariantImageId, images }) => {
         {images.map((i) => (
           <Thumbnail
             key={i.id}
-            isActive={activeImageThumbnail.id === i.id}
+            active={activeImageThumbnail.id === i.id}
             onClick={handleClick}
             image={i}
           />

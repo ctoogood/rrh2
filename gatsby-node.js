@@ -21,6 +21,14 @@ exports.createPages = async ({ graphql, actions }) => {
             }
           }
         }
+        allShopifyCollection (sort: { fields: [title] }) {
+          edges {
+            node {
+              handle
+              shopifyId
+            }
+          }
+        }
       }
     `)
     if (result.errors) {
@@ -28,6 +36,7 @@ exports.createPages = async ({ graphql, actions }) => {
     }
     // Get all the posts in an array
     const products = result.data.allShopifyProduct.edges || []
+    const collections = result.data.allShopifyCollection.edges || []
     const posts = result.data.allSanityPost.edges || []
     const postsPerPage = 9
     const numPages = Math.ceil(posts.length / postsPerPage)
@@ -39,6 +48,17 @@ exports.createPages = async ({ graphql, actions }) => {
         component: require.resolve(`./src/templates/productDetail.js`),
         context: {
           productId: node.shopifyId,
+        },
+      });
+    });
+
+    collections.forEach(({ node }) => {
+      const path = `/shop/collections/${node.handle}`;
+      createPage({
+        path,
+        component: require.resolve(`./src/templates/collection.js`),
+        context: {
+          collectionId: node.shopifyId,
         },
       });
     });

@@ -204,7 +204,17 @@ const Header = () => {
               </div>
             </li>
             <li>
-              <Link to="/shop">Shop</Link>
+              <a href="#">Shop</a>
+              <div className="uk-navbar-dropdown" data-offset="-15">
+                <ul className="uk-nav uk-navbar-dropdown-nav">
+                  <li>
+                    <Link to="/shop/collections/herbal-products">Herbal Products</Link>
+                  </li>
+                  <li>
+                    <Link to="/shop/collections/potted-herbs">Potted Herbs</Link>
+                  </li>
+                </ul>
+              </div>
             </li>
             <li>
               <Link to="/blog">Blog</Link>

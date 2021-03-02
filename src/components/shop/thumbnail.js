@@ -1,6 +1,6 @@
 import React from "react";
 
-const Thumbnail = ({ isActive, onClick, image }) => {
+const Thumbnail = ({ active, onClick, image }) => {
   const handleClick = () => {
     onClick(image);
   };
@@ -9,7 +9,7 @@ const Thumbnail = ({ isActive, onClick, image }) => {
       className="uk-display-inline-block uk-margin-right"
       style={{width: "100px", height: "100px", objectFit:"cover"}}
       type="image"
-      isActive={isActive}
+      active={active}
       src={image.localFile.childImageSharp.fluid.src}
       alt="Product Image"
       onClick={handleClick}

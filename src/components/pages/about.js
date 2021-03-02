@@ -255,7 +255,7 @@ const About = () => {
         >Visit Shop</button>
         </Link>
 </section>
-<Instagram />
+{/* <Instagram /> */}
 
     </section>
   )

@@ -25,7 +25,6 @@ const Layout = ({ children }) => {
 
   return (
     <>
-      <SEO />
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
       <div
 

@@ -18,7 +18,7 @@ const ProductQuantity = ({ variantId, available }) => {
     console.log(loading)
     await updateLineItem({ variantId, quantity: parseInt(quantity, 10) });
     setLoading(false)
-    navigate(`${origin}/cart/`).setTimeout(300)
+    navigate(`${origin}/cart/`)
     }
     catch(e) {
       console.log(e)

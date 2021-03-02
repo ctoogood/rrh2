@@ -24,7 +24,7 @@ const Hero = () => {
   ].reverse()
   return (
     <main className="uk-width-1-1">
-      <BackgroundImage fluid={backgroundFluidImageStack} backgroundColor={`#040e18`} className=" uk-width-1-1 uk-background-secondary uk-background-fixed" style={{height:"80vh"}}>
+      <BackgroundImage fluid={backgroundFluidImageStack} backgroundColor={`#040e18`} className=" uk-width-1-1 uk-background-secondary uk-background-fixed" style={{height:"90vh"}}>
         <div className="uk-text-center uk-position-center">
           <h2 className="uk-h1 uk-text-secondary">Herbal Medicine Consultations</h2>
           <h2 className="uk-h1 uk-text-secondary">Herbal Products</h2>

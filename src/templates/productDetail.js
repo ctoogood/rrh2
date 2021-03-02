@@ -25,12 +25,7 @@ const ProductDetail = (props) => {
         result.variants.find(({ id }) => id === variantId) || result.variants[0]
       );
     });
-  }, [
-    getProductById,
-    setProduct,
-    variantId,
-    props.data.shopifyProduct.shopifyId,
-  ]);
+  }, []);
 
   const handleVariantChange = (e) => {
     const newVariant = product?.variants.find((v) => v.id === e.target.value);

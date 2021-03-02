@@ -118,7 +118,6 @@ const CartContents = () => {
       {checkout?.lineItems?.map(item => (
         <div className="cart__item uk-padding-small-top" key={item.variant.id}>
           <div className="cart__item__product">
-            {console.log(item)}
             <img alt="product" src={item.variant.image.src} />
             <div>
               <h3 className="uk-margin-remove">{item.title}</h3>

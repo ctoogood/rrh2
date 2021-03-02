@@ -63,17 +63,17 @@ module.exports = {
         dataset: "production",
       },
     },
-    {
-      resolve: `gatsby-source-instagram`,
-      options: {
-        username: `11452324078`,
-      },
-    },
+    // {
+    //   resolve: `gatsby-source-instagram`,
+    //   options: {
+    //     username: `11452324078`,
+    //   },
+    // },
     {
       resolve: "gatsby-source-shopify",
       options: {
-        shopName: process.env.GATSBY_SHOP_NAME,
-        accessToken: process.env.GATSBY_ACCESS_TOKEN,
+        shopName: "rosy-herbalist",
+        accessToken: "2542930ee804c495a32e6e68d0ffa365",
         apiVersion: "2020-07",
       },
     },
