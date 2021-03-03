@@ -125,10 +125,8 @@ import Menu from "../../images/menu.svg"
 
 const Header = () => {
   const menuItems = [
-    { title: "Herbal Medicine", link: "/herbalmedicine" },
-    { title: "Workshops", link: "/workshops" },
-    { title: "Consultations", link: "/consultations" },
-    { title: "Shop", link: "/shop" },
+    { title: "About", children: [{ title: "Herbal Medicine", link: "/herbalmedicine" }, { title: "Workshops", link: "/workshops" }, { title: "Consultations", link: "/consultations" },] },
+    { title: "Shop", children: [{ title: "Herbal Products", link: "/shop/collections/herbal-products"}, { title: "Potted Herbs", link: "/shop/collections/potted-herbs"}] },
     { title: "Blog", link: "/blog" },
     { title: "Contact", link: "/contact" },
   ]
@@ -155,10 +153,9 @@ const Header = () => {
         <div className="uk-navbar-center">
           <Link className="uk-navbar-item uk-logo" to="/">
             <h1
-              className="uk-h2 uk-margin-remove"
-              style={{ fontWeight: "bold" }}
+              className="uk-h2 uk-margin-remove uk-text-center"
             >
-              Rosy Rose Herbalist
+              Rosy Rose<br />Herbalist
             </h1>
           </Link>
         </div>
@@ -260,6 +257,17 @@ const Header = () => {
                 <Link className="" to={item.link} style={{ color: "black" }}>
                   {item.title}
                 </Link>
+                <ul class="uk-nav-sub">
+                {console.log(item)}
+                {item?.children?.map(child => (
+                  <li>
+                    <Link className="" to={child.link} style={{ color: "black" }}>
+                  {child.title}
+                  </Link>
+                </li>
+                ))}
+                </ul>
+                
               </li>
             ))}
           </ul>

@@ -114,8 +114,10 @@ const About = () => {
     <section className="about__main">
       <Background />
       <div className="uk-section">
-    <div className="uk-container uk-width-3-4@m uk-text-center uk-text-left@s">
+    <div className="uk-container uk-width-3-4@m uk-text-center uk-text-left@s" data-uk-scrollspy="target: > section; cls: uk-animation-fade; delay: 400">
+      <section>
         <h3 className="uk-h2 uk-text-muted">{data.aboutSection1.aboutSection1.aboutHeader}</h3>
+        </section>
         <section className="uk-grid-small uk-grid uk-flex-row-reverse">
           <section className="uk-height-medium uk-width-1-3@s">
             <Img
