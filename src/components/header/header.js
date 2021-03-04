@@ -7,7 +7,7 @@ import Menu from "../../images/menu.svg"
 
 const Header = () => {
   const { checkout } = useContext(CartContext);
-  const count = checkout.lineItems?.reduce((totalCount, lineItem) => {
+  const count = checkout?.lineItems?.reduce((totalCount, lineItem) => {
     return totalCount + lineItem.quantity;
   }, 0);
   const menuItems = [
