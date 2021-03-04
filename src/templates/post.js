@@ -53,8 +53,6 @@ const Post = ({ data: { post }, errors }) => {
         <section className="uk-margin-medium-top">
           <h1>{post.title}</h1>
           <p className="postDetail__metadata">{post.publishedAt}</p>
-
-          {/* <p className="postDetail__metadata">{post.categories[0].title}</p> */}
           <hr />
           <Img fluid={image} className="postDetail__image" />
 

@@ -37,10 +37,29 @@ const ProductDetail = (props) => {
       }
     );
   };
+  const title = props.data.shopifyProduct.title; 
+  const description = props.data.shopifyProduct.description
+  const image = props.data.shopifyProduct.images[0].localFile.url
+  const slug = props.data.shopifyProduct.handle
 
   return (
     <Layout>
-      <SEO title={props.data.shopifyProduct.title} />
+      <SEO title={title} slug={`/${slug}`} description={description} image={image}>
+      <script type='application/ld+json'>
+					{`{
+						'@context': 'https://schema.org',
+						'@type': 'Product',
+						'@id': 'https://rosyherbalist.co.uk/${slug}',
+						'name': ${title},
+            'image': ${image},
+						'description': ${description},
+            "brand": {
+              "@type": "Brand",
+              "name": "Rosy Rose Herbalist"
+            },
+					}`}
+				</script>
+      </SEO>
       <section className="uk-padding" style={{maxWidth:"1000px", margin:"auto"}}>
       <ul className="uk-breadcrumb" aria-label="breadcrumb">
         <li><Link className="uk-text-primary" to="/shop">Shop</Link></li>
@@ -99,6 +118,7 @@ export const ProductPageQuery = graphql`
   query ProductDetailQuery($productId: String) {
     shopifyProduct(shopifyId: { eq: $productId }) {
       title
+      handle
       shopifyId
       description
       descriptionHtml

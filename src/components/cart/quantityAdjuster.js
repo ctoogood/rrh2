@@ -14,7 +14,7 @@ const QuantityAdjuster = ({ item, onAdjust }) => {
   return (
     <div className="uk-flex">
       <button className="uk-button uk-text-bold" onClick={handleDecrementQuantity}>-</button>
-      <div className="uk-padding-small uk-padding-remove-vertical">{quantity}</div>
+      <div className="uk-padding-small uk-padding-remove-vertical"><strong>{quantity}</strong></div>
       <button className="uk-button uk-text-bold" onClick={handleIncrementQuantity}>+</button>
     </div>
   );

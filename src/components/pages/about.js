@@ -4,10 +4,6 @@ import Img from "gatsby-image"
 import PortableText from "@sanity/block-content-to-react"
 import BackgroundImage from "gatsby-background-image"
 import Background from "./background"
-import Instagram from "./instagram"
-// import Background from "./background"
-// import Button from "./ui/button"
-// import Instagram from "./instagram"
 
 const About = () => {
   const serializers = {
@@ -114,7 +110,7 @@ const About = () => {
     <section className="about__main">
       <Background />
       <div className="uk-section">
-    <div className="uk-container uk-width-3-4@m uk-text-center uk-text-left@s" data-uk-scrollspy="target: > section; cls: uk-animation-fade; delay: 400">
+    <div className="uk-container uk-width-3-4@m uk-text-center uk-text-left@s" data-uk-scrollspy="target: > section; cls: uk-animation-fade; delay: 300">
       <section>
         <h3 className="uk-h2 uk-text-muted">{data.aboutSection1.aboutSection1.aboutHeader}</h3>
         </section>

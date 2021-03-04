@@ -49,7 +49,7 @@ const Contact = props => {
   `)
   return (
     <Layout path={props.location}>
-      <SEO title="Contact" />
+      <SEO title="Contact" slug='/contact'/>
       <section className="herbalmedicine__main">
         <div className="herbalmedicine__title">
           <h1>Contact</h1>

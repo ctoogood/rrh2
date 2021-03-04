@@ -1,15 +1,15 @@
 /* eslint-disable jsx-a11y/no-onchange */
 
 import React from "react";
-import { graphql, Link } from "gatsby";
+import { graphql } from "gatsby";
 import ProductList from "../components/shop/productList"
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 
 const Collection = (props) => {
-  console.log(props)
   return (
     <Layout>
+      <section>
       <SEO title={props.data.shopifyCollection.title} />
       <section className="uk-padding" style={{maxWidth:"1000px", margin:"auto"}}>
         <ul className="uk-breadcrumb" aria-label="breadcrumb">
@@ -19,6 +19,7 @@ const Collection = (props) => {
         </ul>
         <h1 className="uk-h1 uk-margin-medium-top uk-text-center ">{props.data.shopifyCollection.title}</h1>
         <ProductList products={props.data.shopifyCollection.products} />
+      </section>
       </section>
     </Layout>
   );

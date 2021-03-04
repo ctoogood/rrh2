@@ -91,6 +91,7 @@ const Consultations = props => {
       <SEO
         title="Consultations"
         description="Herbal medicine consultations provided by Scottish herbalist Rosy Rose Herbalist, based in Falkland - Fife"
+        slug='/consultations'
       />
       <section className="herbalmedicine__main">
         <div className="herbalmedicine__title">

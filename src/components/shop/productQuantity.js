@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react";
-import { navigate, useLocation } from "@reach/router";
+// import { navigate, useLocation } from "@reach/router";
 import CartContext from "../../context/CartContext";
 
 const ProductQuantity = ({ variantId, available }) => {
@@ -18,7 +18,7 @@ const ProductQuantity = ({ variantId, available }) => {
     console.log(loading)
     await updateLineItem({ variantId, quantity: parseInt(quantity, 10) });
     setLoading(false)
-    navigate(`${origin}/cart/`)
+    // navigate(`${origin}/cart/`)
     }
     catch(e) {
       console.log(e)
@@ -42,7 +42,7 @@ const ProductQuantity = ({ variantId, available }) => {
         <div>
         <button type="submit" disabled={!available}
           className="uk-button uk-button-primary uk-margin-small-top"
-        >{!loading ? ( "Add To Cart" ) : ("Loading...")}</button>
+        >{!loading ? ( "Add To Cart" ) : (<div data-uk-spinner></div>)}</button>
       </div>
       </form>
     </div>

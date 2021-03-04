@@ -1,4 +1,5 @@
 import React from "react"
+import Background from "../pages/background"
 import Product from "./product"
 
 const ProductList = ({ products }) => {

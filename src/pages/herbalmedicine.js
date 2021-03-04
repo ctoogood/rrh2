@@ -80,7 +80,7 @@ const HerbalMedicine = props => {
   `)
   return (
     <Layout>
-      <SEO title="Herbal Medicine" />
+      <SEO title="Herbal Medicine" slug='/herbal-medicine' />
       <section className="herbalmedicine__main">
         <div className="herbalmedicine__title">
           <h1>Herbal Medicine</h1>

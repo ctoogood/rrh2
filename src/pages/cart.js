@@ -6,7 +6,7 @@ import SEO from "../components/seo.js";
 const Cart = () => {
   return (
     <Layout>
-      <SEO title="Cart" />
+      <SEO title="Cart" slug='/cart' />
       <CartContents />
     </Layout>
   );
