@@ -65,6 +65,28 @@ const About = () => {
           }
         }
       }
+      collections: allShopifyCollection {
+        edges {
+          node {
+            shopifyId
+            description
+            descriptionHtml
+            handle
+            title
+            products {
+              images {
+                localFile {
+                  childImageSharp {
+                    fluid {
+                      ...GatsbyImageSharpFluid
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
       aboutProducts: allSanityHome {
         edges {
           node {
@@ -184,27 +206,29 @@ const About = () => {
       </div>
       
       {/* <section className="uk-margin-large-top uk-padding-large">
-      <div className="uk-child-width-expand@s uk-text-center uk-margin-auto uk-height-medium uk-margin-medium-bottom" data-uk-grid style={{maxWidth:"1100px"}}>
-    <div className="uk-border-rounded uk-overflow-hidden">
-        <div className="uk-card uk-card-default uk-card-body uk-height-medium uk-padding-remove uk-transition-toggle" tabIndex="0"><Link
-              className="about__link link"
-              to={`/shop/${data.aboutProducts.edges[0].node.aboutProducts[0].linkTo.slug.current}`}
-            >
-              
-              <BackgroundImage
-                className="uk-height-1-1 uk-background-blend-soft-light uk-transition-scale-up"
-                style={{backgroundColor:"#D5BAD3"}}
-                fluid={
-                  data.aboutProducts.edges[0].node.aboutProducts[0].productImage
-                    .asset.fluid
-                }
-              ><h3 className="uk-margin-remove uk-position-center uk-h1 uk-text-secondary">
-              {data.aboutProducts.edges[0].node.aboutProducts[0].productTitle}
-            </h3>
-                </BackgroundImage>
-            </Link></div>
-    </div>
-    <div className="uk-border-rounded uk-overflow-hidden">
+      <div className="uk-child-width-1-3@s uk-text-center uk-margin-auto uk-margin-medium-bottom" data-uk-grid style={{maxWidth:"1100px"}}>
+      {data.collections.edges.map(collection => (
+        <div className="uk-border-rounded uk-overflow-hidden">
+          <div className="uk-card uk-card-default uk-card-body uk-height-medium uk-padding-remove uk-transition-toggle" tabIndex="0">
+            <Link
+                className="about__link link"
+                to={`/shop/${collection.node.handle}`}
+              >
+                <BackgroundImage
+                  className="uk-height-1-1 uk-background-blend-color uk-transition-scale-up"
+                  style={{backgroundColor:"#4B5A57"}}
+                  fluid={
+                    collection.node.products[0].images[0].localFile.childImageSharp.fluid
+                  }
+                ><h3 className="uk-margin-remove uk-position-center uk-h1 uk-text-secondary">
+                {collection.node.title}
+              </h3>
+                  </BackgroundImage>
+              </Link></div>
+        </div>
+      ))} */}
+    
+    {/* <div className="uk-border-rounded uk-overflow-hidden">
     <div className="uk-card uk-card-default uk-card-body uk-height-medium uk-padding-remove uk-transition-toggle" tabIndex="0"><Link
               className="about__link link"
               to={`/shop/${data.aboutProducts.edges[0].node.aboutProducts[1].linkTo.slug.current}`}
@@ -241,11 +265,11 @@ const About = () => {
             </h3>
                 </BackgroundImage>
             </Link>
-          </div>
+          </div> */}
 
           
-    </div>
-</div>
+    {/* </div> */}
+{/* </div>
 <Link to={`/shop`}>
 <button
           className="uk-button uk-button-primary uk-align-center" 

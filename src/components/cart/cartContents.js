@@ -45,7 +45,6 @@ const CartContents = () => {
             <div className="cart__item__product">
               <img alt="product" src={item.variant.image.src} />
               <div>
-                {console.log(item)}
                 <Link to={`/shop/${item.variant.product.handle}`}>
                 <h3 className="uk-margin-remove">{item.title}</h3>
                 </Link>
@@ -101,7 +100,7 @@ const CartContents = () => {
         </div>
       )}
       {!!checkout?.lineItems.length && (
-        <footer className="cart__footer">
+        <section className="cart__footer">
           <div>
             <button
               className="uk-button uk-button-primary"
@@ -112,7 +111,7 @@ const CartContents = () => {
               Checkout
             </button>
           </div>
-        </footer>
+        </section>
       )}
     </section>
   )

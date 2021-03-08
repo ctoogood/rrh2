@@ -152,7 +152,7 @@ const Header = () => {
               {" "}
               <img src={Cart} alt="" width="20px" />
               {count? (
-              <span class="uk-badge">{count}</span>
+              <span className="uk-badge">{count}</span>
               ): null
               }
             </Link>
