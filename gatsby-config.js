@@ -30,17 +30,6 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-sass`,
-    // {
-    //   resolve: `gatsby-plugin-manifest`,
-    //   options: {
-    //     name: `gatsby-starter-default`,
-    //     short_name: `starter`,
-    //     start_url: `/`,
-    //     background_color: `#663399`,
-    //     theme_color: `#663399`,
-    //     display: `minimal-ui`,
-    //   },
-    // },
     {
       resolve: "gatsby-source-sanity",
       options: {
@@ -48,24 +37,18 @@ module.exports = {
         dataset: "production",
       },
     },
-    // {
-    //   resolve: `gatsby-source-instagram`,
-    //   options: {
-    //     username: `11452324078`,
-    //   },
-    // },
     {
       resolve: "gatsby-source-shopify",
       options: {
-        shopName: "rosy-herbalist",
-        accessToken: "2542930ee804c495a32e6e68d0ffa365",
+        shopName: `${process.env.GATSBY_SHOP_NAME}`,
+        accessToken: `${process.env.GATSBY_ACCESS_TOKEN}`,
         apiVersion: "2020-07",
       },
     },
     {
       resolve: 'gatsby-plugin-mailchimp',
       options: {
-          endpoint: 'https://protonmail.us1.list-manage.com/subscribe/post?u=370213d081e95bead5828bb13&amp;id=3464500f50', 
+          endpoint: `${process.env.GATSBY_ACCESS_TOKEN}`, 
           timeout: 3500, // number; the amount of time, in milliseconds, that you want to allow mailchimp to respond to your request before timing out. defaults to 3500
       },
   },
