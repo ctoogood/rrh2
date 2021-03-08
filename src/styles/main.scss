@@ -72,10 +72,61 @@ h6,
   color: $global-color;
 }
 
+footer {
+  background-color:#869E96;
+}
+
+.header__logo {
+  color:#869E96;
+}
+
+.map-responsive{
+  overflow:hidden;
+  padding-bottom:56.25%;
+  position:relative;
+  height:0;
+}
+.map-responsive iframe{
+  left:0;
+  top:0;
+  height:100%;
+  width:100%;
+  position:absolute;
+}
+
 /////////////////////////////////////////////////////////////// ABOUT PAGES //////////////////////////////////////////////////////////////////////////
 
+.background__main {
+  position: absolute;
+  top:0;
+  height:100vh;
+  width:100%;
+  opacity:0.06;
+  display: none;
+  z-index:-1;
+
+  @media only screen and(min-width:1000px) {
+      display: flex;
+  }
+}
+
+.background__image {
+  &:nth-child(1) {
+     width:100%;
+     left:-30%;
+     transform: rotate(45deg);
+  }
+
+  &:nth-child(2) {
+      left:28%;
+      width: 100%;
+      transform: rotate(225deg);
+      top:53%;
+  }
+
+}
+
 .herbalmedicine__main {
-  min-height: 100vh;
   text-align: center;
   margin: 1rem;
   position: relative;
@@ -357,10 +408,11 @@ h6,
 .rrh_grid {
   max-width: 1000px;
   margin: auto;
+  padding-bottom: 3rem;
   @media only screen and(min-width:600px) {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-gap: 0.5rem;
+    grid-gap: 1.5rem;
   }
 
   @media only screen and(min-width:800px) {
@@ -402,7 +454,6 @@ h6,
 .productDetail__grid {
   @media only screen and(min-width:900px) {
     display: flex;
-    margin: 2rem;
 
     > div {
       width: 50%;
@@ -413,6 +464,10 @@ h6,
       margin-left: 2rem;
     }
   }
+}
+
+.product-quantity__input {
+  width:70px;
 }
 
 /////////////////////////////////////////////////////////////// CART //////////////////////////////////////////////////////////////////////////
@@ -480,4 +535,9 @@ h6,
 
 .cart__footer {
   margin-top: 1rem;
+}
+
+//////////////////////////////////////// MAILCHIMP ///////////////////////////////////////////////////@at-root
+
+.mailchimp {
 }

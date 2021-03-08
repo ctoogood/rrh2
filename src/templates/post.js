@@ -4,6 +4,7 @@ import Img from "gatsby-image"
 import BlockContent from "@sanity/block-content-to-react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import Share from "../components/utils/share"
 
 const Post = ({ data: { post }, errors }) => {
   const image = post.mainImage.asset.fluid
@@ -42,19 +43,24 @@ const Post = ({ data: { post }, errors }) => {
         title={post.title}
         image={post.mainImage.asset.url}
         description={post.excerpt}
-        keywords={[post.keywords.map(k => `${k}`)]}
       />
-      <div className="uk-text-center uk-margin-auto" style={{maxWidth:"800px"}}>
+      <div className="uk-text-left uk-margin-auto" style={{maxWidth:"800px"}}>
       <ul className="uk-breadcrumb" aria-label="breadcrumb">
         <li><Link className="uk-text-primary" to="/blog">Blog</Link></li>
         <li><p className="uk-display-inline">{post.title}</p></li>
       </ul>
 
-        <section className="uk-margin-medium-top">
+        <section className="uk-margin-medium-top uk-text-center">
           <h1>{post.title}</h1>
           <p className="postDetail__metadata">{post.publishedAt}</p>
+          <Share socialConfig={{
+                  config: {
+                    url: `rosyherbalist.co.uk/blog/${post.slug.current}`,
+                    title: post.title,
+                  },
+                }} />
           <hr />
-          <Img fluid={image} className="postDetail__image" />
+          <Img fluid={image} className="postDetail__image uk-margin-bottom" />
 
           <BlockContent
             className="postDetail__body"
@@ -65,6 +71,12 @@ const Post = ({ data: { post }, errors }) => {
             dataset="production"
           />
         </section>
+        <Share socialConfig={{
+                  config: {
+                    url: `rosyherbalist.co.uk/blog/${post.slug.current}`,
+                    title: post.title,
+                  },
+                }} />
       </div>
     </Layout>
   )
@@ -78,6 +90,9 @@ export const query = graphql`
       title
       keywords
       excerpt
+      slug {
+        current
+      }
       categories {
         title
       }

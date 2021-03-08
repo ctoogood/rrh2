@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useContext } from "react";
 import { Link } from "gatsby"
 import CartContext from "../../context/CartContext";
 
@@ -11,10 +11,52 @@ const Header = () => {
     return totalCount + lineItem.quantity;
   }, 0);
   const menuItems = [
-    { title: "About", children: [{ title: "Herbal Medicine", link: "/herbalmedicine" }, { title: "Workshops", link: "/workshops" }, { title: "Consultations", link: "/consultations" },] },
-    { title: "Shop", children: [{ title: "Herbal Products", link: "/shop/collections/herbal-products"}, { title: "Potted Herbs", link: "/shop/collections/potted-herbs"}] },
-    { title: "Blog", link: "/blog" },
-    { title: "Contact", link: "/contact" },
+    { 
+      title: "About",
+      link: "", 
+      children: [
+        { 
+          title: "Herbal Medicine", link: "/herbalmedicine" 
+        },
+        { 
+          title: "Workshops", link: "/workshops" 
+        },
+        { 
+          title: "Consultations", link: "/consultations" 
+        },
+      ]
+    },
+    { 
+      title: "Shop", 
+      link: "/shop",
+      children: [
+        { 
+          title: "Herbal Products", 
+          children: [
+            {
+              title: "Herbal Tea", link: "/shop/collections/herbal-tea"
+            }, 
+            {
+              title: "Herbal Balm", link: "/shop/collections/herbal-balm"
+            }, 
+            {
+              title: "Herbal Cream", link: "/shop/collections/herbal-cream"
+            }, 
+            {
+              title: "Herbal Syrup", link: "/shop/collections/herbal-syrup"
+            }
+          ]
+        }, 
+    { 
+      title: "Potted Herbs", link: "/shop/collections/potted-herbs"}] },
+    { 
+      title: "Blog", 
+      link: "/blog" 
+    },
+    { 
+      title: "Contact", 
+      link: "/contact" 
+    },
   ]
   return (
     <div>
@@ -37,7 +79,7 @@ const Header = () => {
         <div className="uk-navbar-center">
           <Link className="uk-navbar-item uk-logo" to="/">
             <h1
-              className="uk-h2 uk-margin-remove uk-text-center"
+              className="uk-h2 uk-margin-remove uk-text-center header__logo"
             >
               Rosy Rose<br />Herbalist
             </h1>
@@ -49,7 +91,7 @@ const Header = () => {
             className=" uk-navbar-item"
           >
             <img src={Cart} alt="" width="20px" />
-            <span class="uk-badge">1</span>
+            <span className="uk-badge">1</span>
           </Link>
         </div>
       </nav>
@@ -65,44 +107,43 @@ const Header = () => {
       >
         <div className="uk-navbar-left">
           <Link className="uk-navbar-item uk-logo" to="/">
-            <h1 className="uk-h2 uk-margin-remove">Rosy Rose Herbalist</h1>
+            <h1 className="uk-h2 uk-margin-remove header__logo">Rosy Rose Herbalist</h1>
           </Link>
           <ul className="uk-navbar-nav">
-            <li>
-              <a href="#">About</a>
-              <div className="uk-navbar-dropdown" data-offset="-15">
+          {menuItems.map(item => (
+              <li className="uk-text-bold" key={item.title}>
+                <Link to={item.link}>
+                  {item.title}
+                </Link>
+                <div className={item.children ? ("uk-navbar-dropdown"): null} data-offset="-15">
                 <ul className="uk-nav uk-navbar-dropdown-nav">
-                  <li>
-                    <Link to="/herbalmedicine">Herbal Medicine</Link>
+                {item?.children?.map(child => (
+                  <>
+                  <li className=" uk-text-bold" key={child.title} >
+                  {child.link ? (
+                    <Link to={child.link} >
+                      {child.title}
+                    </Link>
+                  ) : (
+                    <p className="uk-margin-remove">
+                      {child.title}
+                    </p>
+                  )}
                   </li>
-                  <li>
-                    <Link to="/consultations">Consultations</Link>
+                  <li className="uk-nav-divider"></li>
+                  {child.children?.map(child2 => (
+                  <li className="uk-text-small uk-text-light" key={child2.title}>
+                    <Link to={child2.link} >
+                      {child2.title}
+                    </Link>
                   </li>
-                  <li>
-                    <Link to="/workshops">Workshops</Link>
-                  </li>
+                ))}
+                </>
+                ))}
                 </ul>
-              </div>
-            </li>
-            <li>
-              <a href="#">Shop</a>
-              <div className="uk-navbar-dropdown" data-offset="-15">
-                <ul className="uk-nav uk-navbar-dropdown-nav">
-                  <li>
-                    <Link to="/shop/collections/herbal-products">Herbal Products</Link>
-                  </li>
-                  <li>
-                    <Link to="/shop/collections/potted-herbs">Potted Herbs</Link>
-                  </li>
-                </ul>
-              </div>
-            </li>
-            <li>
-              <Link to="/blog">Blog</Link>
-            </li>
-            <li>
-              <Link to="/contact">Contact</Link>
-            </li>
+                </div>
+              </li>
+            ))}
           </ul>
         </div>
         <div className="uk-navbar-right">
@@ -128,26 +169,41 @@ const Header = () => {
             style={{ color: "black" }}
           />
 
-          <ul className="uk-nav uk-offcanvas-nav ">
+          <ul className="uk-nav uk-offcanvas-nav">
+              <li className="uk-text-bold">
+                <Link to="/" style={{ color: "black" }}>
+                  Home
+                </Link>
+              </li>
             {menuItems.map(item => (
               <li key={item.title}>
-                {item.link ? (
-                <>
-                <Link className="" to={item.link} style={{ color: "black" }}>
+                <Link className="uk-text-bold" to={item.link} style={{ color: "black" }}>
                   {item.title}
                 </Link>
-                </>) : (<p>{item.title}</p>)}
                 <ul className="uk-nav-sub">
-                {console.log(item)}
                 {item?.children?.map(child => (
-                  <li key={child.title}>
+                  <>
+                  <li className="uk-text-bold" key={child.title}>
+                  {child.link ? (
                     <Link to={child.link} style={{ color: "black" }}>
-                  {child.title}
-                  </Link>
-                </li>
+                      {child.title}
+                    </Link>
+                  ) : (
+                    <p className="uk-margin-remove" style={{ color: "black" }}>
+                      {child.title}
+                    </p>
+                  )}
+                  </li>
+                  {child.children?.map(child2 => (
+                  <li key={child2.title}>
+                    <Link to={child2.link} style={{ color: "black" }}>
+                      {child2.title}
+                    </Link>
+                  </li>
+                ))}
+                </>
                 ))}
                 </ul>
-                
               </li>
             ))}
           </ul>

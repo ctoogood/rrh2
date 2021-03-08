@@ -90,10 +90,10 @@ const CartContents = () => {
       )}
       {!checkout?.lineItems.length && (
         <div className="uk-text-center">
-          <h4 className="uk-h2">Your cart is empty</h4>
+          <p className="uk-text-lead">Your cart is empty</p>
           <div>
             <Link to="/shop">
-              <button className="uk-button uk-button-secondary">
+              <button className="uk-button uk-button-primary uk-text-bold" style={{backgroundColor:"#B8D1D9"}}>
                 Continue Shopping
               </button>
             </Link>

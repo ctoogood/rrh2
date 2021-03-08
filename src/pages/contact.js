@@ -65,6 +65,9 @@ const Contact = props => {
               serializers={serializers}
             />
           </div>
+          <div className="map-responsive">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d931.9083802141249!2d-3.2101307793657163!3d56.252765793066025!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4886497daa3c12d9%3A0xf3b218cc029fdaf0!2sRosy%20Rose%20Herbalist!5e0!3m2!1sen!2suk!4v1615149981664!5m2!1sen!2suk" width="600" height="450" style={{border:0}} allowfullscreen="" loading="lazy"></iframe>
+          </div>
         </section>
       </section>
     </Layout>

@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
+import { useLocation } from "@reach/router"
 import {useStaticQuery, graphql} from 'gatsby'
 
 const SEO = ({title, description, image, slug, children}) => {
@@ -18,9 +19,12 @@ const SEO = ({title, description, image, slug, children}) => {
 		}
 	`);
 
+const { pathname } = useLocation()
+
+
 	return (
-		<Helmet htmlAttributes={{lang: `en`}} titleTemplate={`%s | ${data.site.siteMetadata.title}`}>
-			<title>{title}</title>
+		<Helmet htmlAttributes={{lang: `en`}} titleTemplate={pathname !== "/" ? (`%s | ${data.site.siteMetadata.title}`): (`%s | ${data.site.siteMetadata.description}`)}>
+			<title>{pathname !== "/" ? (title) : (data.site.siteMetadata.title)}</title>
 			<meta name='description' content={description || data.site.siteMetadata.description} />
 			<link rel='canonical' href={`${data.site.siteMetadata.siteUrl}${slug}`} />
 			<link rel='icon' href={data.site.siteMetadata.favicon} />

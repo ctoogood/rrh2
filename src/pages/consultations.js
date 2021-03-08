@@ -124,43 +124,48 @@ const Consultations = props => {
               blocks={data.sanityPage._rawPageSection4.paragraph}
               serializers={serializers}
             />
-            <aside className="consultations__pricelist">
-              <h4>Prices</h4>
-              {console.log(data.sanityPage.prices[0])}
-              <p>
-                <b>{data.sanityPage.prices[0].items[0].header}</b> -
-                {data.sanityPage.prices[0].items[0].cost}
-                <em>({data.sanityPage.prices[0].items[0].details})</em>
-              </p>
-              <p>
-                <b>{data.sanityPage.prices[0].items[1].header}</b> -
-                {data.sanityPage.prices[0].items[1].cost}
-                <em>({data.sanityPage.prices[0].items[1].details})</em>
-              </p>
-              <p>
-                <b>{data.sanityPage.prices[0].items[2].header}</b> -
-                {data.sanityPage.prices[0].items[2].cost}
-                <em>({data.sanityPage.prices[0].items[2].details})</em>
-              </p>
-              <p>
-                <b>{data.sanityPage.prices[0].items[3].header}</b> -
-                {data.sanityPage.prices[0].items[3].cost}
-                <em>({data.sanityPage.prices[0].items[3].details})</em>
-              </p>
-              <p>
-                <b>{data.sanityPage.prices[0].items[4].header}</b> -
-                {data.sanityPage.prices[0].items[4].cost}
-                <em>({data.sanityPage.prices[0].items[4].details})</em>
-              </p>
-              <p>
-                <b>{data.sanityPage.prices[0].items[5].header}</b> -
-                {data.sanityPage.prices[0].items[5].cost}
-                <em>({data.sanityPage.prices[0].items[5].details})</em>
-              </p>
-              <p>
-                <em>{data.sanityPage.prices[0].footnote}</em>
-              </p>
-            </aside>
+            <div className="uk-card uk-card-default">
+              <div className="uk-card-body uk-text-secondary uk-background-primary">
+              <h3 className="uk-card-title uk-text-secondary">Prices</h3>
+                <table className="uk-table uk-table-divider">
+                  <thead>
+                    <tr>
+                        <th>Service</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                      <td>{data.sanityPage.prices[0].items[0].header}({data.sanityPage.prices[0].items[0].details})</td>
+                      <td>{data.sanityPage.prices[0].items[0].cost}</td>
+                  </tr>
+                  <tr>
+                      <td>{data.sanityPage.prices[0].items[1].header}({data.sanityPage.prices[0].items[1].details})</td>
+                      <td>{data.sanityPage.prices[0].items[1].cost}</td>
+                  </tr>
+                  <tr>
+                      <td>{data.sanityPage.prices[0].items[2].header}({data.sanityPage.prices[0].items[2].details})</td>
+                      <td>{data.sanityPage.prices[0].items[2].cost}</td>
+                  </tr>
+                  <tr>
+                      <td>{data.sanityPage.prices[0].items[3].header}({data.sanityPage.prices[0].items[3].details})</td>
+                      <td>{data.sanityPage.prices[0].items[3].cost}</td>
+                  </tr>
+                  <tr>
+                      <td>{data.sanityPage.prices[0].items[4].header}({data.sanityPage.prices[0].items[4].details})</td>
+                      <td>{data.sanityPage.prices[0].items[4].cost}</td>
+                  </tr>
+                  <tr>
+                      <td>{data.sanityPage.prices[0].items[5].header}({data.sanityPage.prices[0].items[5].details})</td>
+                      <td>{data.sanityPage.prices[0].items[5].cost}</td>
+                  </tr>
+                </tbody>
+                  <p className="uk-text-secondary">
+                    <em>{data.sanityPage.prices[0].footnote}</em>
+                  </p>
+                </table>
+              </div>
+            </div>
           </div>
           <div>
             <div className="consultations__images">

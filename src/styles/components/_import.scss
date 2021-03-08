@@ -27,7 +27,7 @@
 @import "../../../node_modules/uikit/src/scss/components/spinner.scss"; // After: Icon
 // @import "../../../node_modules/uikit/src/scss/components/totop.scss"; // After: Icon
 // @import "../../../node_modules/uikit/src/scss/components/marker.scss"; // After: Icon
-// @import "../../../node_modules/uikit/src/scss/components/alert.scss"; // After: Close
+@import "../../../node_modules/uikit/src/scss/components/alert.scss"; // After: Close
 @import "../../../node_modules/uikit/src/scss/components/badge.scss";
 @import "../../../node_modules/uikit/src/scss/components/label.scss";
 @import "../../../node_modules/uikit/src/scss/components/overlay.scss"; // After: Icon
@@ -38,16 +38,16 @@
 // Navs
 @import "../../../node_modules/uikit/src/scss/components/nav.scss";
 @import "../../../node_modules/uikit/src/scss/components/navbar.scss"; // After: Card, Grid, Nav, Icon, Search
-// @import "../../../node_modules/uikit/src/scss/components/subnav.scss";
+@import "../../../node_modules/uikit/src/scss/components/subnav.scss";
 @import "../../../node_modules/uikit/src/scss/components/breadcrumb.scss";
 // @import "../../../node_modules/uikit/src/scss/components/pagination.scss";
-// @import "../../../node_modules/uikit/src/scss/components/tab.scss";
+@import "../../../node_modules/uikit/src/scss/components/tab.scss";
 // @import "../../../node_modules/uikit/src/scss/components/slidenav.scss"; // After: Icon
 // @import "../../../node_modules/uikit/src/scss/components/dotnav.scss";
 @import "../../../node_modules/uikit/src/scss/components/thumbnav.scss";
 
 // JavaScript
-// @import "../../../node_modules/uikit/src/scss/components/accordion.scss";
+@import "../../../node_modules/uikit/src/scss/components/accordion.scss";
 @import "../../../node_modules/uikit/src/scss/components/drop.scss"; // After: Card
 @import "../../../node_modules/uikit/src/scss/components/dropdown.scss"; // After: Card
 // @import "../../../node_modules/uikit/src/scss/components/modal.scss"; // After: Close
@@ -56,16 +56,16 @@
 // @import "../../../node_modules/uikit/src/scss/components/slider.scss";
 @import "../../../node_modules/uikit/src/scss/components/sticky.scss";
 @import "../../../node_modules/uikit/src/scss/components/offcanvas.scss";
-// @import "../../../node_modules/uikit/src/scss/components/switcher.scss";
-// @import "../../../node_modules/uikit/src/scss/components/leader.scss";
+@import "../../../node_modules/uikit/src/scss/components/switcher.scss";
+@import "../../../node_modules/uikit/src/scss/components/leader.scss";
 // Scrollspy
 // Toggle
 // Scroll
 
 // Additional
 @import "../../../node_modules/uikit/src/scss/components/iconnav.scss";
-// @import "../../../node_modules/uikit/src/scss/components/notification.scss";
-// @import "../../../node_modules/uikit/src/scss/components/tooltip.scss";
+@import "../../../node_modules/uikit/src/scss/components/notification.scss";
+@import "../../../node_modules/uikit/src/scss/components/tooltip.scss";
 // @import "../../../node_modules/uikit/src/scss/components/placeholder.scss";
 // @import "../../../node_modules/uikit/src/scss/components/progress.scss";
 // @import "../../../node_modules/uikit/src/scss/components/sortable.scss";

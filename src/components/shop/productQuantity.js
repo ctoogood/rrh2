@@ -1,6 +1,7 @@
 import React, { useState, useContext } from "react";
 // import { navigate, useLocation } from "@reach/router";
 import CartContext from "../../context/CartContext";
+import UIkit from "uikit"
 
 const ProductQuantity = ({ variantId, available }) => {
   const [quantity, setQuantity] = useState(1);
@@ -15,9 +16,9 @@ const ProductQuantity = ({ variantId, available }) => {
     try {
     e.preventDefault();
     setLoading(true)
-    console.log(loading)
     await updateLineItem({ variantId, quantity: parseInt(quantity, 10) });
     setLoading(false)
+    UIkit.notification({message: '<div class="uk-background-primary uk-text-secondary uk-text-center"><span class="uk-text-secondary" style="padding:15px 0px;" uk-icon=\'icon: check\'></span> Added to Cart</div>', pos: 'bottom-center'})
     // navigate(`${origin}/cart/`)
     }
     catch(e) {
@@ -37,7 +38,7 @@ const ProductQuantity = ({ variantId, available }) => {
           disabled={!available}
           value={quantity}
           onChange={handleQuantityChange}
-          className="uk-input uk-display-inline uk-width-small"
+          className="uk-input uk-display-inline product-quantity__input"
         />
         <div>
         <button type="submit" disabled={!available}

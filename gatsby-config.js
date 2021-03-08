@@ -5,10 +5,10 @@ require("dotenv").config({
 module.exports = {
   siteMetadata: {
     title: `Rosy Rose Herbalist`,
-    siteUrl: `https://www.rosyherbalist.co.uk`,
+    siteUrl: `https://vigilant-archimedes-f81599.netlify.app/`,
     description: `Herbalist based in Falkland, Fife`,
     author: `Rosy Rose`,
-    favicon: `./src/images/favicon.ico`,
+    favicon: `https://res.cloudinary.com/dhat0b0ey/image/upload/v1614885128/RRH/favicon.ico`,
     image: `https://res.cloudinary.com/dhat0b0ey/image/upload/v1590518155/RRH/rosy-rose-herbalist.png`,
   },
   plugins: [
@@ -62,6 +62,13 @@ module.exports = {
         apiVersion: "2020-07",
       },
     },
+    {
+      resolve: 'gatsby-plugin-mailchimp',
+      options: {
+          endpoint: 'https://protonmail.us1.list-manage.com/subscribe/post?u=370213d081e95bead5828bb13&amp;id=3464500f50', 
+          timeout: 3500, // number; the amount of time, in milliseconds, that you want to allow mailchimp to respond to your request before timing out. defaults to 3500
+      },
+  },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

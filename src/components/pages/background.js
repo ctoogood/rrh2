@@ -22,21 +22,14 @@ const Background = () => {
     }
   `)
   return (
-    <section className="uk-height-viewport uk-flex uk-width-1-1 uk-position-absolute uk-overflow-hidden" style={{zIndex:"-1", opacity:"0.08"}}>
+    <section className="background__main">
       <Img
-        className=""
+        className="background__image"
         fluid={data.bgImage2.childImageSharp.fluid}
-        style={{width:"100%",
-          left:"-30%",
-          transform: "rotate(45deg)"}}
       />
       <Img
-        className=""
+        className="background__image"
         fluid={data.bgImage2.childImageSharp.fluid}
-        style={{width:"100%",
-          left:"20%",
-          top:"-35%",
-          transform: "rotate(225deg)"}}
       />
     </section>
   )

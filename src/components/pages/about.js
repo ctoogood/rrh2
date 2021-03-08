@@ -107,10 +107,10 @@ const About = () => {
   `)
 
   return (
-    <section className="about__main">
+    <section className="about__main uk-position-relative">
       <Background />
       <div className="uk-section">
-    <div className="uk-container uk-width-3-4@m uk-text-center uk-text-left@s" data-uk-scrollspy="target: > section; cls: uk-animation-fade; delay: 300">
+    <div className="uk-container uk-width-3-4@m uk-text-center uk-text-left@s" data-uk-scrollspy="target: > section; cls: uk-animation-fade; delay: 100">
       <section>
         <h3 className="uk-h2 uk-text-muted">{data.aboutSection1.aboutSection1.aboutHeader}</h3>
         </section>
@@ -148,7 +148,7 @@ const About = () => {
           <Img
             className="uk-width-medium uk-margin-auto"
             fluid={data.aboutSection2.aboutSection2.aboutImage.asset.fluid}
-            style={{transform: "rotate(45deg)", zIndex:"-1"}}
+            style={{zIndex:"-1", opacity:"0.5"}}
           />
           </div>
         </div>
@@ -158,7 +158,6 @@ const About = () => {
         >Find Out More</button>
         </Link>
       </div>
-      <Background />
       <div className="uk-text-center uk-margin-auto uk-margin-large-top uk-padding-large" style={{maxWidth: "900px"}}>
         <div data-uk-grid>
           <div className="uk-card uk-text-left@s uk-width-1-2@m">
@@ -183,8 +182,8 @@ const About = () => {
         >Find Out More</button>
         </Link>
       </div>
-      <Background />
-      <section className="uk-margin-large-top uk-padding-large">
+      
+      {/* <section className="uk-margin-large-top uk-padding-large">
       <div className="uk-child-width-expand@s uk-text-center uk-margin-auto uk-height-medium uk-margin-medium-bottom" data-uk-grid style={{maxWidth:"1100px"}}>
     <div className="uk-border-rounded uk-overflow-hidden">
         <div className="uk-card uk-card-default uk-card-body uk-height-medium uk-padding-remove uk-transition-toggle" tabIndex="0"><Link
@@ -252,9 +251,7 @@ const About = () => {
           className="uk-button uk-button-primary uk-align-center" 
         >Visit Shop</button>
         </Link>
-</section>
-{/* <Instagram /> */}
-
+      </section> */}
     </section>
   )
 }

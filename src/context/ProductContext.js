@@ -9,6 +9,7 @@ const query = graphql`
           title
           handle
           id
+          tags
           shopifyId
           priceRange {
             minVariantPrice {
