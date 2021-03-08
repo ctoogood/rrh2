@@ -48,7 +48,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-mailchimp',
       options: {
-          endpoint: `${process.env.GATSBY_ACCESS_TOKEN}`, 
+          endpoint: `${process.env.GATSBY_MAILCHIMP_ENDPOINT}`, 
           timeout: 3500, // number; the amount of time, in milliseconds, that you want to allow mailchimp to respond to your request before timing out. defaults to 3500
       },
   },
