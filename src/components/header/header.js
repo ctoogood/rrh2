@@ -30,6 +30,10 @@ const Header = () => {
       title: "Shop", 
       link: "/shop",
       children: [
+        {
+          title: "All",
+          link: "/shop"
+        },
         { 
           title: "Herbal Products", 
           children: [
@@ -86,12 +90,13 @@ const Header = () => {
           </Link>
         </div>
         <div className="uk-navbar-right">
-          <Link
-            to="/cart"
-            className=" uk-navbar-item"
-          >
-            <img src={Cart} alt="" width="20px" />
-            <span className="uk-badge">1</span>
+          <Link to="/cart" className="uk-navbar-item">
+              {" "}
+              <img src={Cart} alt="" width="20px" />
+              {count? (
+              <span className="uk-badge">{count}</span>
+              ): null
+              }
           </Link>
         </div>
       </nav>
