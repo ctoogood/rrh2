@@ -13,8 +13,8 @@ const Shop = (props) => {
         description="Buy herbal balms, herbal syrup, herbal tea online from Rosy Rose Herbalist, based in Falkland, Fife - Scotland"
         slug='/shop'
         />
-      <h1 className="uk-h1 uk-margin-medium-top uk-text-center ">Shop</h1>
-      <div className="uk-container uk-margin-large">
+      <h1 className="uk-h1 uk-margin-medium-top uk-text-center">Shop</h1>
+      <div className="uk-container uk-margin-large-top" style={{maxWidth:"1000px"}}>
       <section className="uk-text-center uk-child-width-1-3@s" data-uk-grid>
         {props.data.allShopifyCollection.edges.map(collection => (
           <>

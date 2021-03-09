@@ -1,6 +1,9 @@
 import React from 'react';
 import { useStaticQuery, graphql, Link } from "gatsby"
 import Mailchimp from '../utils/mailchimp';
+import Instagram from "../../images/instagram.svg"
+import Facebook from "../../images/facebook.svg"
+
 
 const Footer = () => {
   const data = useStaticQuery(graphql`
@@ -28,8 +31,8 @@ const Footer = () => {
             <div>
               <h2 className="uk-h3">Let's Connect</h2>
               <a target="_blank"
-                rel="noopener noreferrer" href="https://www.facebook.com/rosyroseherbalist/" className="uk-margin-small-right uk-width-auto" style={{width:30}} data-uk-icon="facebook"></a>
-              <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/rosyherbalist/" className="uk-margin-small-right uk-width-auto" style={{width:30}} data-uk-icon="instagram"></a>
+                rel="noopener noreferrer" href="https://www.facebook.com/rosyroseherbalist/" className="uk-margin-small-right uk-width-auto" ><img style={{width:"25px"}} src={Facebook} /></a>
+              <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/rosyherbalist/" className="uk-margin-small-right uk-width-auto" ><img style={{width:"25px"}} src={Instagram} /></a>
               </div>
               </div>
             </div>  
