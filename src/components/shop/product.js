@@ -19,7 +19,7 @@ const Product = ({ product }) => {
               (<p className="uk-margin-remove">{product.productType}</p>)}        
               <p className="uk-text-bold">£{Number(price).toFixed(2)}</p>   
               {!product.availableForSale ? (
-              <div class="uk-alert-danger">Out of Stock</div>
+              <div className="uk-alert-danger">Out of Stock</div>
               ) : null }
               </div>
               

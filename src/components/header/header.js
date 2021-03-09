@@ -118,10 +118,11 @@ const Header = () => {
                 <div className={item.children ? ("uk-navbar-dropdown"): null} data-offset="-15">
                 <ul className="uk-nav uk-navbar-dropdown-nav">
                 {item?.children?.map(child => (
-                  <>
-                  <li className=" uk-text-bold" key={child.title} >
+                  <div key={child.title}>
+                  <li className="uk-nav-divider"></li>
+                  <li className="uk-text-bold">
                   {child.link ? (
-                    <Link to={child.link} >
+                    <Link className="uk-link" style={{color: "#808080"}} to={child.link} >
                       {child.title}
                     </Link>
                   ) : (
@@ -130,15 +131,14 @@ const Header = () => {
                     </p>
                   )}
                   </li>
-                  <li className="uk-nav-divider"></li>
                   {child.children?.map(child2 => (
-                  <li className="uk-text-small uk-text-light" key={child2.title}>
-                    <Link to={child2.link} >
+                  <li className="uk-text-small" key={child2.title}>
+                    <Link className="uk-link" to={child2.link} >
                       {child2.title}
                     </Link>
                   </li>
                 ))}
-                </>
+                </div>
                 ))}
                 </ul>
                 </div>
@@ -181,9 +181,9 @@ const Header = () => {
                   {item.title}
                 </Link>
                 <ul className="uk-nav-sub">
-                {item?.children?.map(child => (
-                  <>
-                  <li className="uk-text-bold" key={child.title}>
+                {item?.children?.map(child => (               
+                  <div  key={child.title}>
+                  <li className="uk-text-bold">
                   {child.link ? (
                     <Link to={child.link} style={{ color: "black" }}>
                       {child.title}
@@ -201,7 +201,7 @@ const Header = () => {
                     </Link>
                   </li>
                 ))}
-                </>
+                </div>
                 ))}
                 </ul>
               </li>
