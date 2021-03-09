@@ -18,6 +18,7 @@ const Collection = (props) => {
           <li><p className="uk-display-inline">{props.data.shopifyCollection.title}</p></li>
         </ul>
         <h1 className="uk-h1 uk-margin-medium-top uk-text-center ">{props.data.shopifyCollection.title}</h1>
+        <p className="uk-text-center">{props.data.shopifyCollection.description}</p>
         <Share socialConfig={{
                   config: {
                     url: `${props.data.site.siteMetadata.siteUrl}/shop/${props.data.shopifyCollection.handle}`,
@@ -43,6 +44,7 @@ export const CollectionQuery = graphql`
     shopifyCollection(shopifyId: { eq: $collectionId }) {
       id
       title
+      description
       products {
         title
         handle

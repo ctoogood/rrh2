@@ -3,7 +3,6 @@
 import React, { useContext, useState, useEffect } from "react";
 import queryString from "query-string";
 import { graphql, Link } from "gatsby";
-import Img from "gatsby-image"
 import CartContext from "../context/CartContext";
 import { navigate, useLocation } from "@reach/router";
 import BasicProductImageGallery from "../components/shop/imageGallery.js";

@@ -1,5 +1,5 @@
 import React from 'react';
-import { useStaticQuery, graphql, Link } from "gatsby"
+import { useStaticQuery, graphql } from "gatsby"
 import Mailchimp from '../utils/mailchimp';
 import Instagram from "../../images/instagram.svg"
 import Facebook from "../../images/facebook.svg"

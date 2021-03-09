@@ -409,10 +409,11 @@ footer {
   max-width: 1000px;
   margin: auto;
   padding-bottom: 3rem;
+  display: grid;
+  grid-gap: 1.5rem;
+
   @media only screen and(min-width:600px) {
-    display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-gap: 1.5rem;
   }
 
   @media only screen and(min-width:800px) {

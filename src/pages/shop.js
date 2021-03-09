@@ -15,14 +15,13 @@ const Shop = (props) => {
         />
       <h1 className="uk-h1 uk-margin-medium-top uk-text-center">Shop</h1>
       <div className="uk-container uk-margin-large-top" style={{maxWidth:"1000px"}}>
-      <section className="uk-text-center uk-child-width-1-3@s" data-uk-grid>
+      <section className="uk-text-center uk-child-width-1-3@s uk-margin-bottom" data-uk-grid>
         {props.data.allShopifyCollection.edges.map(collection => (
-          <>
-          {console.log(collection.node.products)}
+          <div key={collection.node.shopifyId}>
           {collection.node.products.length !== 0 ? (
           <Collection collection={collection.node} />
           ) : null}
-          </>
+          </div>
         ))}
       </section>
       </div>

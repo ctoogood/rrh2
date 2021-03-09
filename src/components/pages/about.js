@@ -2,7 +2,6 @@ import React from "react"
 import { useStaticQuery, graphql, Link } from "gatsby"
 import Img from "gatsby-image"
 import PortableText from "@sanity/block-content-to-react"
-import BackgroundImage from "gatsby-background-image"
 import Background from "./background"
 
 const About = () => {
@@ -204,78 +203,6 @@ const About = () => {
         >Find Out More</button>
         </Link>
       </div>
-      
-      {/* <section className="uk-margin-large-top uk-padding-large">
-      <div className="uk-child-width-1-3@s uk-text-center uk-margin-auto uk-margin-medium-bottom" data-uk-grid style={{maxWidth:"1100px"}}>
-      {data.collections.edges.map(collection => (
-        <div className="uk-border-rounded uk-overflow-hidden">
-          <div className="uk-card uk-card-default uk-card-body uk-height-medium uk-padding-remove uk-transition-toggle" tabIndex="0">
-            <Link
-                className="about__link link"
-                to={`/shop/${collection.node.handle}`}
-              >
-                <BackgroundImage
-                  className="uk-height-1-1 uk-background-blend-color uk-transition-scale-up"
-                  style={{backgroundColor:"#4B5A57"}}
-                  fluid={
-                    collection.node.products[0].images[0].localFile.childImageSharp.fluid
-                  }
-                ><h3 className="uk-margin-remove uk-position-center uk-h1 uk-text-secondary">
-                {collection.node.title}
-              </h3>
-                  </BackgroundImage>
-              </Link></div>
-        </div>
-      ))} */}
-    
-    {/* <div className="uk-border-rounded uk-overflow-hidden">
-    <div className="uk-card uk-card-default uk-card-body uk-height-medium uk-padding-remove uk-transition-toggle" tabIndex="0"><Link
-              className="about__link link"
-              to={`/shop/${data.aboutProducts.edges[0].node.aboutProducts[1].linkTo.slug.current}`}
-            >
-              
-              <BackgroundImage
-                className="uk-height-1-1 uk-background-blend-soft-light uk-transition-scale-up"
-                style={{backgroundColor:"#E1C0C0"}}
-                fluid={
-                  data.aboutProducts.edges[0].node.aboutProducts[1].productImage
-                    .asset.fluid
-                }
-              ><h3 className="uk-margin-remove uk-position-center uk-h1 uk-text-secondary">
-              {data.aboutProducts.edges[0].node.aboutProducts[1].productTitle}
-            </h3>
-                </BackgroundImage>
-            </Link></div>
-    </div>
-    <div className="uk-border-rounded uk-overflow-hidden">
-    <div className="uk-card uk-card-default uk-card-body uk-height-medium uk-padding-remove uk-transition-toggle" tabIndex="0"><Link
-              className="about__link link"
-              to={`/shop/${data.aboutProducts.edges[0].node.aboutProducts[2].linkTo.slug.current}`}
-            >
-              
-              <BackgroundImage
-                className="uk-height-1-1 uk-background-blend-soft-light uk-transition-scale-up"
-                style={{backgroundColor:"#BAD2D3"}}
-                fluid={
-                  data.aboutProducts.edges[0].node.aboutProducts[2].productImage
-                    .asset.fluid
-                }
-              ><h3 className="uk-margin-remove uk-position-center uk-h1 uk-text-secondary">
-              {data.aboutProducts.edges[0].node.aboutProducts[2].productTitle}
-            </h3>
-                </BackgroundImage>
-            </Link>
-          </div> */}
-
-          
-    {/* </div> */}
-{/* </div>
-<Link to={`/shop`}>
-<button
-          className="uk-button uk-button-primary uk-align-center" 
-        >Visit Shop</button>
-        </Link>
-      </section> */}
     </section>
   )
 }
