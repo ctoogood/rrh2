@@ -17,7 +17,12 @@ const Shop = (props) => {
       <div className="uk-container uk-margin-large">
       <section className="uk-text-center uk-child-width-1-3@s" data-uk-grid>
         {props.data.allShopifyCollection.edges.map(collection => (
+          <>
+          {console.log(collection.node.products)}
+          {collection.node.products.length !== 0 ? (
           <Collection collection={collection.node} />
+          ) : null}
+          </>
         ))}
       </section>
       </div>

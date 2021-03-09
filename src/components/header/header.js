@@ -38,21 +38,18 @@ const Header = () => {
           title: "Herbal Products", 
           children: [
             {
-              title: "Herbal Tea", link: "/shop/collections/herbal-tea"
+              title: "Infusions", link: "/shop/collections/infusions"
             }, 
             {
-              title: "Herbal Balm", link: "/shop/collections/herbal-balm"
+              title: "Balms", link: "/shop/collections/balms"
             }, 
             {
-              title: "Herbal Cream", link: "/shop/collections/herbal-cream"
-            }, 
-            {
-              title: "Herbal Syrup", link: "/shop/collections/herbal-syrup"
+              title: "Syrup", link: "/shop/collections/syrup"
             }
           ]
         }, 
     { 
-      title: "Potted Herbs", link: "/shop/collections/potted-herbs"}] },
+      title: "Potted Remedies", link: "/shop/collections/potted-remedies"}] },
     { 
       title: "Blog", 
       link: "/blog" 

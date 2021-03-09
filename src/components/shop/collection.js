@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 import Img from "gatsby-image"
 
 const Collection = ({ collection }) => {
-  const image = collection.products[0].images[0].localFile.childImageSharp.fluid
+  const image = collection?.products[0]?.images[0].localFile.childImageSharp.fluid
   return (
     <div>
       <Link className="link " to={`/shop/collections/${collection.handle}`}>

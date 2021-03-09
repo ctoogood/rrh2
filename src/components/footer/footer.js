@@ -28,8 +28,8 @@ const Footer = () => {
             <div>
               <h2 className="uk-h3">Let's Connect</h2>
               <a target="_blank"
-                rel="noopener noreferrer" href="https://www.facebook.com/rosyroseherbalist/" className="uk-margin-small-right uk-width-auto" uk-icon="facebook"></a>
-              <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/rosyherbalist/" className="uk-margin-small-right uk-width-auto" uk-icon="instagram"></a>
+                rel="noopener noreferrer" href="https://www.facebook.com/rosyroseherbalist/" className="uk-margin-small-right uk-width-auto" style={{width:30}} uk-icon="facebook"></a>
+              <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/rosyherbalist/" className="uk-margin-small-right uk-width-auto" style={{width:30}} uk-icon="instagram"></a>
               </div>
               </div>
             </div>  
